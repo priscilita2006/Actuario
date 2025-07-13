@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-  ...
-  <link rel="stylesheet" href="css/styles.css" />
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Actuario UBA</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-  ...
-  <script src="js/script.js"></script>
+  <h1>Malla Interactiva - Actuario UBA</h1>
+  <div class="malla">
+    <!-- CICLO GENERAL -->
+    <button class="ramo" id="241" data-requiere="">Análisis Matemático I</button>
+    <button class="ramo" id="242" data-requiere="">Economía</button>
+    <button class="ramo" id="245" data-requiere="">Álgebra</button>
+    <button class="ramo" id="246" data-requiere="">Historia Económica y Social General</button>
+    <button class="ramo" id="255" data-requiere="">Análisis Contable</button>
+    <button class="ramo" id="256" data-requiere="">Instituciones de Gobierno y Economía Política</button>
+
+    <!-- PROFESIONAL -->
+    <button class="ramo" id="262" data-requiere="general">Macroeconomía I</button>
+    <button class="ramo" id="274" data-requiere="general">Sistemas Administrativos</button>
+    <button class="ramo" id="462" data-requiere="general">Derecho Empresarial</button>
+    <button class="ramo" id="540" data-requiere="general">Análisis Estadístico I</button>
+    <button class="ramo" id="542" data-requiere="general">Matemática Aplicada I</button>
+
+    <button class="ramo" id="544" data-requiere="542">Matemática Aplicada II</button>
+    <button class="ramo" id="601" data-requiere="540,542">Matemática Financiera y Actuarial</button>
+    <button class="ramo" id="602" data-requiere="540,542">Análisis Estadístico II</button>
+    <button class="ramo" id="603" data-requiere="462">Derecho Financiero, Seguros y SS</button>
+    <button class="ramo" id="279" data-requiere="602">Administración Financiera</button>
+    <button class="ramo" id="291" data-requiere="542">Microeconomía para Economistas</button>
+    <button class="ramo" id="548" data-requiere="279,602">Dinero y Bancos</button>
+    <button class="ramo" id="746" data-requiere="540,542">Computación Científica Actuarial</button>
+    <button class="ramo" id="751" data-requiere="544,602">Estadística Actuarial</button>
+    <button class="ramo" id="752" data-requiere="544">Análisis Numérico</button>
+    <button class="ramo" id="753" data-requiere="601,751,752">Biometría Actuarial</button>
+    <button class="ramo" id="754" data-requiere="753">Teoría Actuarial Seguros Personales</button>
+    <button class="ramo" id="755" data-requiere="601,751,752">Teoría Actuarial Seguros Patrimoniales</button>
+    <button class="ramo" id="756" data-requiere="754">Teoría Actuarial de Fondos y Planes</button>
+    <button class="ramo" id="757" data-requiere="754,755">Teoría de Equilibrio Actuarial</button>
+    <button class="ramo" id="758" data-requiere="601,751">Bases Actuariales Inversión y Financiamiento</button>
+    <button class="ramo" id="717" data-requiere="746,757,758">Modelos y Proyecciones Actuariales</button>
+    <button class="ramo" id="728" data-requiere="754,755,756">Práctica Profesional</button>
+
+    <!-- ELECTIVAS -->
+    <button class="ramo" id="electiva1" data-requiere="">Electiva 1</button>
+    <button class="ramo" id="electiva2" data-requiere="">Electiva 2</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
-    <meta charset="UTF-8" />
-    <title>Malla 3D Interactiva</title>
-    <style>
-      body { margin: 0; overflow: hidden; }
-      canvas { display: block; }
-    </style>
-  </head>
-  <body>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
-    <script>
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(renderer.domElement);
-
-      const geometry = new THREE.PlaneGeometry(10, 10, 20, 20);
-      const material = new THREE.MeshBasicMaterial({ color: 0x0077ff, wireframe: true });
-      const mesh = new THREE.Mesh(geometry, material);
-      scene.add(mesh);
-
-      camera.position.z = 15;
-
-      function animate() {
-        requestAnimationFrame(animate);
-        mesh.rotation.x += 0.01;
-        mesh.rotation.y += 0.01;
-        renderer.render(scene, camera);
-      }
-
-      animate();
-    </script>
-  </body>
 </html>
