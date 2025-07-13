@@ -30,3 +30,4 @@ document.querySelectorAll('.ramo').forEach(ramo => {
     actualizarEstado();
   });
 });
+<script src="js/script.js"></script>
